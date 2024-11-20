@@ -1,42 +1,123 @@
+// Header.scss
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 32px;
+    padding: 1rem 2rem;
     background-color: #000;
     color: #fff;
   
     &__logo {
-      font-size: 24px;
-      font-weight: bold;
+      img {
+        height: 32px;
+        width: auto;
+      }
     }
   
     &__nav {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 2rem;
   
-      a {
+      &-link {
+        position: relative;
         color: #fff;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+  
+        &:hover {
+          color: #9577f3;
+        }
+  
+        &--active {
+          color: #7e5bef;
+        }
+      }
+  
+      &-dropdown {
+        position: relative;
+  
+        &-trigger {
+          background: none;
+          border: none;
+          padding: 0;
+          font: inherit;
+          color: inherit;
+          cursor: pointer;
+        }
+  
+        &-content {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          margin-top: 0.5rem;
+          min-width: 200px;
+          background-color: #000;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 0.5rem;
+          padding: 0.5rem 0;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+  
+        &-item {
+          display: block;
+          padding: 0.5rem 1rem;
+          color: #fff;
+          text-decoration: none;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            color: #9577f3;
+            background-color: rgba(255, 255, 255, 0.05);
+          }
+        }
       }
     }
   
     &__auth {
       display: flex;
-      gap: 16px;
+      align-items: center;
+      gap: 1rem;
   
       &-link {
         color: #fff;
         text-decoration: none;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+  
+        &:hover {
+          color: #9577f3;
+        }
   
         &--primary {
           background-color: #7e5bef;
-          padding: 12px 24px;
-          border-radius: 28px;
+          padding: 0.75rem 1.5rem;
+          border-radius: 9999px;
+          border: 1px solid transparent;
+  
+          &:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #7e5bef;
+          }
+  
+          svg {
+            transition: transform 0.3s ease;
+          }
+  
+          &:hover svg {
+            transform: translate(2px, -2px);
+          }
         }
       }
     }
