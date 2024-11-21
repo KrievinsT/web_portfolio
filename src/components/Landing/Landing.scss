@@ -1,79 +1,243 @@
-// Landing.scss
-body,
-h1,
-p,
-a {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+$primary-purple: #7e5bef;
+$text-gray: #808080;
+$background-dark: #000000;
+
+.landing-container {
+  min-height: 100vh;
+  background-color: $background-dark;
+  color: white;
+  padding: 2rem;
+  overflow: hidden;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-}
-
-.container {
-  max-width: 1200px;
+.content-wrapper {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 40px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
-
-  h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
-
-  .get-started {
-    display: inline-block;
-    background-color: #7e5bef;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 4px;
-    font-size: 18px;
-  }
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-
-  .card {
-    width: 300px;
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-
-.stats {
   display: flex;
   justify-content: space-between;
-  margin-top: 40px;
+  align-items: center;
+  gap: 4rem;
+  padding: 2rem;
+}
 
-  .stats-item {
-    text-align: center;
+.left-section {
+  flex: 1;
+  max-width: 600px;
 
-    h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
+  .hero-text {
+    margin-bottom: 3rem;
+
+    h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+
+      .gradient-text {
+        background: linear-gradient(to bottom, $primary-purple, #9747FF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
 
     p {
-      font-size: 18px;
+      color: $text-gray;
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
     }
+  }
+
+  .get-started-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid $primary-purple;
+    background-color: $primary-purple;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: black;
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.reviews-section {
+  margin: 3rem 0;
+
+  .stars {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    .star {
+      color: #FFD700;
+      font-size: 1.25rem;
+    }
+  }
+
+  p {
+    color: $text-gray;
+    margin-bottom: 1rem;
+  }
+
+  .user-avatars {
+    display: flex;
+    align-items: center;
+
+    .avatar-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid $background-dark;
+      background-color: $primary-purple;
+      margin-left: -1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.stats-section {
+  display: flex;
+  gap: 4rem;
+  margin-top: 3rem;
+
+  .stat-item {
+    h3 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $text-gray;
+      font-size: 1rem;
+    }
+  }
+}
+
+.right-section {
+    flex: 1;
+    position: relative;
+    height: 800px;
+    perspective: 1400px;
+  
+    .stacked-cards {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+  
+      .card {
+        position: absolute;
+        right: 0;
+        width: 500px;
+        height: 330px;
+        border-radius: 25px;
+        transform-origin: right center;
+        transition: transform 0.5s ease;
+        backface-visibility: hidden;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 25px;
+        }
+  
+        &.card-1 {
+          transform: translateZ(0) translateY(0);
+          z-index: 3;
+        }
+  
+        &.card-2 {
+          transform: translateZ(-50px) translateY(70px);
+          z-index: 2;
+        }
+  
+        &.card-3 {
+          transform: translateZ(-90px) translateY(150px);
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+    // Media Queries
+    @media (max-width: 1200px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .left-section {
+        .get-started-btn {
+        margin: 0 auto;
+        }
+    }
+
+    .reviews-section {
+        .stars, .user-avatars {
+        justify-content: center;
+        }
+    }
+
+    .stats-section {
+        justify-content: center;
+    }
+
+    .right-section {
+        .stacked-cards {
+          .card {
+            width: 320px;
+            height: 200px;
+            left: 50%;
+            transform-origin: center;
+    
+            &.card-1 {
+              transform: translateX(-50%) translateZ(0);
+            }
+    
+            &.card-2 {
+              transform: translateX(-50%) translateZ(-20px) translateY(40px);
+            }
+    
+            &.card-3 {
+              transform: translateX(-50%) translateZ(-40px) translateY(80px);
+            }
+          }
+        }
+      }
+    }
+
+@media (max-width: 768px) {
+  .left-section {
+    .hero-text {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .stats-section {
+    flex-direction: column;
+    gap: 2rem;
   }
 }
