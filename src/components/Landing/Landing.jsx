@@ -71,7 +71,33 @@ const Landing = () => {
               />
             </div>
           </div>
+        </div>
 
+        {/* Right Section */}
+        <div className="right-section">
+          <div className="stacked-cards">
+            <div className="card card-3">
+              <img
+                src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6712541db7b4e6d53cfc3392_card-03.svg"
+                alt="Credit card 3"
+                draggable="false"
+              />
+            </div>
+            <div className="card card-2">
+              <img
+                src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6712541dffb01213277b2adb_card-02.svg"
+                alt="Credit card 2"
+                draggable="false"
+              />
+            </div>
+            <div className="card card-1">
+              <img
+                src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6712541d3eaec2aef6883815_card-01.svg"
+                alt="Credit card 1"
+                draggable="false"
+              />
+            </div>
+          </div>
           <div className="stats-section">
             <div className="stat-item">
               <div className="stat-number">16m</div>
@@ -84,30 +110,6 @@ const Landing = () => {
             <div className="stat-item">
               <div className="stat-number">4.8+</div>
               <p>Positive Rating</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="right-section">
-          <div className="stacked-cards">
-            <div className="card card-3">
-              <img
-                src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6712541db7b4e6d53cfc3392_card-03.svg"
-                alt="Credit card 3"
-              />
-            </div>
-            <div className="card card-2">
-              <img
-                src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6712541dffb01213277b2adb_card-02.svg"
-                alt="Credit card 2"
-              />
-            </div>
-            <div className="card card-1">
-              <img
-                src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6712541d3eaec2aef6883815_card-01.svg"
-                alt="Credit card 1"
-              />
             </div>
           </div>
         </div>
