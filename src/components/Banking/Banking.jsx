@@ -1,12 +1,20 @@
-// Banking.jsx
 import React from 'react';
 import { Shield, ArrowUpRight, DollarSign, LineChart, Settings } from 'lucide-react';
 import './Banking.scss';
 
+const CreditCard = ({ style }) => (
+  <img 
+    src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6737084275f7f15a0f528a20_bank-p-500.png"
+    alt="Credit Card"
+    className="card"
+    style={style}
+  />
+);
+
 const Banking = () => {
   return (
     <div className="banking-container">
-      <div className="content-wrapperr">
+      <div className="content-wrapper">
         <div className="banking-header">
           <h2>
             Our set of banking<br />
@@ -29,24 +37,7 @@ const Banking = () => {
               </p>
             </div>
             <div className="cards-container">
-              <div className="card">
-                <img 
-                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6737084275f7f15a0f528a20_bank-p-500.png"
-                  alt="Credit Card Design"
-                  className="card-background"
-                />
-                <div className="card-content">
-                  <div className="card-header">
-                    <span>Soroush Nasrpour</span>
-                    <span>CVV 341</span>
-                  </div>
-                  <div className="card-number">6037 9975 9598 3090</div>
-                  <div className="card-footer">
-                    <span>09/24</span>
-                    <span>341</span>
-                  </div>
-                </div>
-              </div>
+              <CreditCard />
             </div>
           </div>
 

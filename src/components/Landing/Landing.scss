@@ -186,7 +186,7 @@ $background-dark: #000000;
 
 @media (max-width: 1200px) {
   .content-wrapper {
-    flex-direction: column;
+    flex-direction:column;
     text-align: center;
     gap: 2rem;
   }
