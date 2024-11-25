@@ -2,7 +2,7 @@
     min-height: 100vh;
     background-color: #000000;
     color: white;
-    padding: 2rem;
+    padding: 0rem;
     overflow: hidden;
   
     @media (min-width: 768px) {
@@ -10,7 +10,7 @@
     }
   }
   
-  .content-wrapper {
+  .content-wrap {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
@@ -20,14 +20,15 @@
   .banking-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
+    align-items: flex-end;
     width: 100%;
+    padding-bottom: 1rem;
   
     h2 {
       font-size: 3.5rem;
       font-weight: bold;
       line-height: 1.2;
+      margin: 0;
   
       .gradient-text {
         background: linear-gradient(to right, #7e5bef, #9747ff);
@@ -41,16 +42,17 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background-color: rgba(126, 91, 239, 0.1);
-      color: #7e5bef;
+      background-color: rgb(171, 155, 226);
+      color: #2e293c;
       padding: 0.75rem 1.5rem;
-      border-radius: 9999px;
+      border-radius: 100vw;
       border: none;
       cursor: pointer;
       transition: all 0.2s ease;
+      margin-bottom: 0.5rem;
   
       &:hover {
-        background-color: rgba(126, 91, 239, 0.2);
+        background-color: rgb(197, 182, 239);
         
         svg {
           transform: translate(2px, -2px);
@@ -78,16 +80,17 @@
       grid-column: span 2;
       background: rgba(237, 237, 237, 0.085);
       border-radius: 1rem;
-      padding: 2rem 0 2rem 2rem; // Remove right padding
+      padding: 2rem 0 0 2rem; // Changed padding
       display: flex;
       justify-content: space-between;
-      align-items: stretch; // Make items stretch full height
+      align-items: center; // Changed from stretch
       min-height: 350px;
       overflow: hidden;
   
       .card-info {
         flex: 1;
         max-width: 50%;
+        padding-bottom: 2rem; // Added padding bottom
         z-index: 2;
   
         h3 {
@@ -107,7 +110,7 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+        align-items: flex-end;
         margin: 0;
         padding: 0;
         height: 100%;
@@ -115,14 +118,14 @@
         .card {
           width: 100%;
           max-width: 300px;
-          height: 100%;
+          height: 350px; 
           margin: 0;
           padding: 0;
-          border-radius: 1rem;
+          border-radius: 1rem 1rem 0 0; 
           transition: transform 0.3s ease;
           object-fit: cover;
           object-position: right;
-  
+          transform-origin: bottom; 
           &:hover {
             transform: translateY(-10px);
           }
@@ -136,6 +139,7 @@
         .card-info {
           max-width: 100%;
           margin-bottom: 2rem;
+          padding-bottom: 0;
         }
   
         .cards-container {
@@ -143,6 +147,7 @@
   
           .card {
             object-position: center;
+            border-radius: 1rem;
           }
         }
       }
