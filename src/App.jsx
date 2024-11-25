@@ -1,11 +1,11 @@
-
 import React from 'react';
 import './assets/App.scss';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
 import Separator from './components/Separator/Separator';
-import About from './components/About/About'; 
+import About from './components/About/About';
 import Banking from './components/Banking/Banking';
+import OnlinePayments from './components/OnlinePayments/OnlinePayments';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <Separator />
       <About />
       <Banking />
+      <OnlinePayments />
     </>
   );
 }
