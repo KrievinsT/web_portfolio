@@ -6,7 +6,7 @@ import './Banking.scss';
 const Banking = () => {
   return (
     <div className="banking-container">
-      <div className="content-wrapper">
+      <div className="content-wrapperr">
         <div className="banking-header">
           <h2>
             Our set of banking<br />
