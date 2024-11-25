@@ -1,3 +1,7 @@
+$primary-purple: #7e5bef;
+$text-gray: #808080;
+$background-dark: #000000;
+
 .about-container {
     min-height: 100vh;
     background-color: #101010;
@@ -57,29 +61,30 @@
     }
   
     .about-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background-color: #7e5bef;
-      color: white;
-      padding: 0.75rem 2rem;
-      border-radius: 9999px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
-  
-      &:hover {
-        background-color: #6a4acc;
-        
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid $primary-purple;
+        background-color: $primary-purple;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    
+        &:hover {
+          background-color: black;
+        }
+    
         svg {
-          transform: translate(2px, -2px);
+          transition: transform 0.3s ease;
+        }
+    
+        &:hover svg {
+          transform: translateX(4px);
         }
       }
-  
-      svg {
-        transition: transform 0.2s ease;
-      }
-    }
   }
 
   img {

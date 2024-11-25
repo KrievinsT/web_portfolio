@@ -21,9 +21,9 @@ const CreditCard = ({ style }) => (
               <span className="gradient-text">services and offerings</span>
             </h2>
             <button className="view-features-btn">
-              View All Features
-              <img src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67062e524dc8385304da9f45_feature-icon-01.svg" alt="Arrow Up Right" className="icon" />
-            </button>
+            View All Features
+            <ArrowUpRight size={20} />
+          </button>
           </div>
   
           <div className="services-grid">
