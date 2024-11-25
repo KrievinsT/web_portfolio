@@ -98,7 +98,6 @@ const Header = () => {
       <div 
         className={`header__nav-mobile ${isMobileMenuOpen ? 'header__nav-mobile--open' : ''}`}
         onClick={(e) => {
-          // Close mobile menu if clicking outside of the menu content
           if (e.target === e.currentTarget) {
             toggleMobileMenu();
           }

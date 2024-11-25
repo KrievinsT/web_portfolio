@@ -1,0 +1,30 @@
+// Separator.scss
+.logo-separator {
+    background-color: rgb(16, 16, 16);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem 0;
+    overflow: hidden;
+  
+    .scroll-container {
+      display: flex;
+      animation: scroll 30s linear infinite;
+  
+      img {
+        max-height: 70px;
+        width: auto;
+        user-select: none;
+        margin: 0 2rem;
+      }
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
