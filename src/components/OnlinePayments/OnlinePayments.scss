@@ -12,63 +12,90 @@ $background-dark: #000000;
     padding: 6rem 4rem;
   }
 
-  .content-wrapper {
+  .content-wrapist {
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .section-title {
-    font-size: 3rem;
-    font-weight: bold;
-    line-height: 1.2;
+  .header-container {
+    text-align: left;
+    width: 100%;
     margin-bottom: 3rem;
 
-    @media (min-width: 768px) {
-      font-size: 4rem;
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+
+      @media (min-width: 768px) {
+        font-size: 3.5rem;
+      }
     }
   }
 
-  .steps-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .step-item {
+  .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .step-number {
-      font-size: 3rem;
-      font-weight: bold;
-      color: $primary-purple;
-      margin-bottom: 1rem;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
     }
 
-    .step-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
+    .image-container {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 3rem;
+
+      @media (min-width: 768px) {
+        margin-right: 3rem;
+        margin-bottom: 0;
+      }
+
+      .online-payment-image {
+        max-width: 100%;
+        height: 100%;
+      }
     }
 
-    .step-description {
-      color: $text-gray;
-      line-height: 1.6;
-    }
-  }
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
 
-  .online-payment-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 3rem;
+      @media (min-width: 768px) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+    }
+
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .step-number {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-purple;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .step-description {
+        color: $text-gray;
+        line-height: 1.4;
+        font-size: 0.9rem;
+      }
+    }
   }
 }
