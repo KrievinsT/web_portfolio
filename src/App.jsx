@@ -6,6 +6,7 @@ import Separator from './components/Separator/Separator';
 import About from './components/About/About';
 import Banking from './components/Banking/Banking';
 import OnlinePayments from './components/OnlinePayments/OnlinePayments';
+import PricingPackage from './components/PricingPackage/PricingPackage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Banking />
       <OnlinePayments />
+      <PricingPackage />
     </>
   );
 }

@@ -1,4 +1,3 @@
-// OnlinePayments.jsx
 import React from 'react';
 import './OnlinePayments.scss';
 import onlinePaymentImage from '../../assets/online-left.jpg';

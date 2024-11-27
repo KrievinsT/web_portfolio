@@ -1,0 +1,101 @@
+$primary-purple: #7e5bef;
+$text-gray: #808080;
+$background-dark: #000000;
+
+.pricing-package {
+  padding: 4rem 6rem;
+  background-color: $background-dark;
+  color: white;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 4rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    &--primary {
+      color: $primary-purple;
+    }
+  }
+
+  &__description {
+    color: $text-gray;
+    font-size: 1.25rem;
+  }
+
+  &__plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  &__plan {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 2rem;
+
+    &-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    &-price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    &-features {
+      list-style-type: none;
+      padding: 0;
+      margin-bottom: 2rem;
+      text-align: left;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &-button {
+      display: inline-block;
+      border: 1px solid $primary-purple;
+      background-color: $primary-purple;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: black;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .pricing-package {
+    padding: 4rem 2rem;
+
+    &__plans {
+      grid-template-columns: 1fr;
+    }
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+
+      .pricing-package__description {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

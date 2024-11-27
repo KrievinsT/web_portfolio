@@ -87,27 +87,27 @@ const About = () => {
             </div>
           </div>
         </div>
-
-        {/* Stats Section */}
       </div>
-       <div className="stats-section">
-          <div className="stat-item">
-            <h2>15+</h2>
-            <p>Years Of Experience</p>
-          </div>
-          <div className="stat-item">
-            <h2>140K</h2>
-            <p>Active Users</p>
-          </div>
-          <div className="stat-item">
-            <h2>15+</h2>
-            <p>User Downloads</p>
-          </div>
-          <div className="stat-item">
-            <h2>18k+</h2>
-            <p>User Reviews</p>
-          </div>
+
+      {/* Stats Section */}
+      <div className="stats-section">
+        <div className="stat-item">
+          <h2>15+</h2>
+          <p>Years Of Experience</p>
         </div>
+        <div className="stat-item">
+          <h2>140K</h2>
+          <p>Active Users</p>
+        </div>
+        <div className="stat-item">
+          <h2>15+</h2>
+          <p>User Downloads</p>
+        </div>
+        <div className="stat-item">
+          <h2>18k+</h2>
+          <p>User Reviews</p>
+        </div>
+      </div>
     </div>
   );
 };
