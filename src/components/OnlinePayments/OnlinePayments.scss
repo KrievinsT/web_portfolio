@@ -1,11 +1,14 @@
+// OnlinePayments.scss
 $primary-purple: #7e5bef;
 $text-gray: #b7b7b7;
 $background-dark: #0c0c0c;
+$light-lavender: #b8aed1;
 
 .online-payments-container {
   background-color: $background-dark;
   color: white;
   padding: 4rem 2rem;
+  text-align: left;
 
   @media (min-width: 768px) {
     padding: 6rem 4rem;
@@ -21,21 +24,30 @@ $background-dark: #0c0c0c;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: left;
   }
 
   .header-container {
-    text-align: center;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
     width: 100%;
     margin-bottom: 3rem;
 
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2.75rem;
       font-weight: bold;
       line-height: 1.2;
-      color: $primary-purple;
+      color: white;
+      word-wrap:break-word;
+
+      .light-lavender {
+        color: $light-lavender;
+      }
 
       @media (min-width: 768px) {
-        font-size: 3.5rem;
+        font-size: 2.75rem;
+        text-align: left;
       }
     }
   }
@@ -71,16 +83,15 @@ $background-dark: #0c0c0c;
     .step-item {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: left;
+      text-align: left;
       height: 100%;
-      justify-content: space-between;
       margin: 0;
-      position: relative; // Added for the step line
+      position: relative;
     }
 
     .step-title {
-      font-size: 1.25rem;
+      font-size: 22px;
       font-weight: 600;
     }
 
