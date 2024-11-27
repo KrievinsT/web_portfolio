@@ -14,6 +14,8 @@ const PricingPackage = () => {
         <div className="pricing-package__plan">
           <h3 className="pricing-package__plan-title">Basic Plan</h3>
           <div className="pricing-package__plan-price">$ 29.00 USD</div>
+          <p className="pricing-package__plan-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+          <hr />
           <ul className="pricing-package__plan-features">
             <li>Unlimited transactions.</li>
             <li>Basic security features.</li>
@@ -23,9 +25,11 @@ const PricingPackage = () => {
           </ul>
           <button className="pricing-package__plan-button">Get Started</button>
         </div>
-        <div className="pricing-package__plan">
+        <div className="pricing-package__plan standard-plan">
           <h3 className="pricing-package__plan-title">Standard Plan</h3>
           <div className="pricing-package__plan-price">$ 90.00 USD</div>
+          <p className="pricing-package__plan-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+          <hr />
           <ul className="pricing-package__plan-features">
             <li>All Pro Plan features</li>
             <li>Customized solutions for transactions</li>
@@ -38,6 +42,8 @@ const PricingPackage = () => {
         <div className="pricing-package__plan">
           <h3 className="pricing-package__plan-title">Executive Plan</h3>
           <div className="pricing-package__plan-price">$ 190.00 USD</div>
+          <p className="pricing-package__plan-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+          <hr />
           <ul className="pricing-package__plan-features">
             <li>All Basic Plan features</li>
             <li>Advanced security measures</li>
