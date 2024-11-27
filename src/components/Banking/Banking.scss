@@ -3,227 +3,215 @@ $text-gray: #808080;
 $background-dark: #000000;
 
 .banking-container {
-    min-height: 100vh;
-    background-color: #000000;
-    color: white;
-    padding: 0rem;
-    overflow: hidden;
-  
-    @media (min-width: 768px) {
-      padding: 4rem;
+  min-height: 100vh;
+  background-color: $background-dark;
+  color: white;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    padding: 4rem;
+  }
+}
+
+.content-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+
+  @media (max-width: 767px) {
+    padding: 1rem;
+  }
+}
+
+.banking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, $primary-purple, #9747ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
   }
-  
-  .content-wrap {
-    max-width: 1400px;
-    margin: 0 auto;
+
+  .view-features-btn {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid $primary-purple;
+    background-color: $primary-purple;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    &:hover {
+      background-color: black;
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
   }
-  
-  .banking-header {
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .credit-card-section {
+    grid-column: span 2;
+    background: rgba(237, 237, 237, 0.085);
+    border-radius: 1rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    padding-bottom: 1rem;
-  
-    h2 {
-      font-size: 3.5rem;
-      font-weight: bold;
-      line-height: 1.2;
-      margin: 0;
-  
-      .gradient-text {
-        background: linear-gradient(to right, #7e5bef, #9747ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
+    align-items: center;
+    min-height: 350px;
+
+    @media (max-width: 768px) {
+      grid-column: span 1;
+      flex-direction: column;
+      text-align: center;
+      min-height: auto;
+      padding: 1rem;
     }
-  
-    .view-features-btn {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        border: 1px solid $primary-purple;
-        background-color: $primary-purple;
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 2rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    
-        &:hover {
-          background-color: black;
-        }
-    
-        svg {
-          transition: transform 0.3s ease;
-        }
-    
-        &:hover svg {
-          transform: translateX(4px);
-        }
-      }
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    margin-top: 3rem;
-  
-    @media (max-width: 1024px) {
-      grid-template-columns: 1fr;
-    }
-  
-    .credit-card-section {
-      grid-column: span 2;
-      background: rgba(237, 237, 237, 0.085);
-      border-radius: 1rem;
-      padding: 2rem 0 0 2rem; // Changed padding
-      display: flex;
-      justify-content: space-between;
-      align-items: center; // Changed from stretch
-      min-height: 350px;
-      overflow: hidden;
-  
-      .card-info {
-        flex: 1;
-        max-width: 50%;
-        padding-bottom: 2rem; // Added padding bottom
-        z-index: 2;
-  
-        h3 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          font-weight: 600;
-        }
-  
-        p {
-          color: #808080;
-          font-size: 1.1rem;
-          line-height: 1.6;
-        }
-      }
-  
-      .cards-container {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-  
-        .card {
-          width: 100%;
-          max-width: 300px;
-          height: 350px; 
-          margin: 0;
-          padding: 0;
-          border-radius: 1rem 1rem 0 0; 
-          transition: transform 0.3s ease;
-          object-fit: cover;
-          object-position: right;
-          transform-origin: bottom; 
-          &:hover {
-            transform: translateY(-10px);
-          }
-        }
-      }
-  
+
+    .card-info {
+      flex: 1;
+      max-width: 50%;
+      padding-right: 2rem;
+
       @media (max-width: 768px) {
-        flex-direction: column;
-        padding: 2rem;
-        
-        .card-info {
-          max-width: 100%;
-          margin-bottom: 2rem;
-          padding-bottom: 0;
-        }
-  
-        .cards-container {
-          justify-content: center;
-  
-          .card {
-            object-position: center;
-            border-radius: 1rem;
-          }
-        }
-      }
-    }
-  
-    .security-section {
-      grid-column: span 1;
-      background: rgba(237, 237, 237, 0.085);
-      border-radius: 1rem;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-  
-      .security-icon {
-        width: 3rem;
-        height: 3rem;
-        background: rgba(237, 237, 237, 0.149);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-  
-        svg {
-          color: #7e5bef;
-        }
-      }
-  
-      h3 {
-        font-size: 1.5rem;
+        max-width: 100%;
+        padding-right: 0;
         margin-bottom: 1rem;
       }
-  
+
+      h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+
       p {
-        color: #808080;
+        color: $text-gray;
+        font-size: 1.1rem;
         line-height: 1.6;
       }
     }
-  
-    .service-item {
-      grid-column: span 1;
-      background: rgba(237, 237, 237, 0.085);
-      border-radius: 1rem;
-      padding: 2rem;
+
+    .cards-container {
+      flex: 1;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-  
-      .service-icon {
-        width: 3rem;
-        height: 3rem;
-        background-color: rgba(126, 91, 239, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      @media (max-width: 768px) {
         justify-content: center;
-        margin-bottom: 1.5rem;
-  
-        svg {
-          color: #7e5bef;
+        align-items: center;
+      }
+
+      .card {
+        max-width: 300px;
+        height: auto;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-10px);
         }
-      }
-  
-      h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-      }
-  
-      p {
-        color: #808080;
-        line-height: 1.6;
       }
     }
   }
+
+  .security-section,
+  .service-item {
+    background: rgba(237, 237, 237, 0.085);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      align-items: center;
+    }
+
+    .security-icon,
+    .service-icon {
+      width: 3rem;
+      height: 3rem;
+      background: rgba(237, 237, 237, 0.149);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $text-gray;
+      line-height: 1.6;
+    }
+  }
+}
