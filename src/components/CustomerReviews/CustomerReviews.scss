@@ -1,0 +1,90 @@
+$primary-purple: #b4a0f7;
+$text-gray: #808080;
+$background-dark: #000000;
+
+.customer-reviews {
+//   margin: 4rem 0;
+  background-color: $background-dark;
+  padding: 2rem;
+
+  .section-title {
+    color: $primary-purple;
+    font-size: 2.5rem;    
+    text-align: center;
+    margin-bottom: 4rem;
+
+    &--primary {
+        color:white;
+      }
+    }
+  }
+
+  .review-container {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    .review-card {
+      flex: 0 0 100%;
+      padding: 2rem;
+      background-color: #1f1f1f;
+      border-radius: 0.5rem;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease-in-out;
+
+      &.active {
+        transform: translateX(0);
+      }
+
+      blockquote {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: #fff;
+      }
+
+      .reviewer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .avatar {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background-color: $primary-purple;
+        }
+
+        h4 {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: #fff;
+        }
+
+        p {
+          color: $text-gray;
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $primary-purple;
+      }
+    }
+  }
