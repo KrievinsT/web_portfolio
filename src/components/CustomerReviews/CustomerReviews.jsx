@@ -39,16 +39,18 @@ const CustomerReviews = () => {
 
   return (
     <div className="customer-reviews">
-      <h2 className="section-title">
-        <span className="section-title--primary">What Our</span> Customers Say
-      </h2>
-      <div className="controls">
-        <button onClick={handlePrevClick}>
-          <ChevronLeft size={24} />
-        </button>
-        <button onClick={handleNextClick}>
-          <ChevronRight size={24} />
-        </button>
+      <div className="section-header">
+        <h2 className="section-title">
+          <span className="section-title--primary">What Our</span> Customers Say
+        </h2>
+        <div className="controls">
+          <button className="prev-btn" onClick={handlePrevClick}>
+            <ChevronLeft size={24} />
+          </button>
+          <button className="next-btn" onClick={handleNextClick}>
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
       <div className="review-container">
         {reviews.map((review, index) => (
