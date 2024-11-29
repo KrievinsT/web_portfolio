@@ -1,3 +1,4 @@
+// CustomerReviews.jsx
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './CustomerReviews.scss';
@@ -39,14 +40,22 @@ const CustomerReviews = () => {
   return (
     <div className="customer-reviews">
       <h2 className="section-title">
-          <span className="section-title--primary">What our</span> customers say
-        </h2>
+        <span className="section-title--primary">What Our</span> Customers Say
+      </h2>
+      <div className="controls">
+        <button onClick={handlePrevClick}>
+          <ChevronLeft size={24} />
+        </button>
+        <button onClick={handleNextClick}>
+          <ChevronRight size={24} />
+        </button>
+      </div>
       <div className="review-container">
         {reviews.map((review, index) => (
           <div
             key={index}
             className={`review-card ${index === currentIndex ? 'active' : ''}`}
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            style={{ transform: `translateX(-${currentIndex * 25}%)` }}
           >
             <blockquote>{review.quote}</blockquote>
             <div className="reviewer">
@@ -60,14 +69,6 @@ const CustomerReviews = () => {
             </div>
           </div>
         ))}
-      </div>
-      <div className="controls">
-        <button onClick={handlePrevClick}>
-          <ChevronLeft size={24} />
-        </button>
-        <button onClick={handleNextClick}>
-          <ChevronRight size={24} />
-        </button>
       </div>
     </div>
   );
