@@ -90,7 +90,7 @@ const About = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="stats-section">
+      <div className="stats-sect">
         <div className="stat-item">
           <h2>15+</h2>
           <p>Years Of Experience</p>
