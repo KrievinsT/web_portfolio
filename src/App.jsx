@@ -8,6 +8,7 @@ import Banking from './components/Banking/Banking';
 import OnlinePayments from './components/OnlinePayments/OnlinePayments';
 import PricingPackage from './components/PricingPackage/PricingPackage';
 import CustomerReviews from './components/CustomerReviews/CustomerReviews';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <OnlinePayments />
       <PricingPackage />
       <CustomerReviews />
+      <Blogs />
     </>
   );
 }
