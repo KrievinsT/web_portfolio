@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import './assets/App.scss';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
@@ -9,6 +9,7 @@ import OnlinePayments from './components/OnlinePayments/OnlinePayments';
 import PricingPackage from './components/PricingPackage/PricingPackage';
 import CustomerReviews from './components/CustomerReviews/CustomerReviews';
 import Blogs from './components/Blogs/Blogs';
+import FAQ from './components/FAQ/FAQ';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <PricingPackage />
       <CustomerReviews />
       <Blogs />
+      <FAQ />
     </>
   );
 }
