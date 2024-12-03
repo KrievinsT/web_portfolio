@@ -1,30 +1,48 @@
 $primary-purple: #7e5bef;
 $text-gray: #808080;
 
-.start-container {
+.get-started-container {
   background-color: #000;
-  padding: 4rem 2rem;
+  padding: 4rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.get-started-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: space-between;
 
-  .start-content {
-    display: flex;
-    align-items: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
     gap: 2rem;
+  }
 
-    .start-line {
-      flex: 1;
-      height: 1px;
-      background-color: $text-gray;
-    }
-
-    .start-text {
-      font-size: 2rem;
+  .get-started-text-wrapper {
+    .get-started-title {
+      font-size: 3rem;
       font-weight: bold;
       color: white;
+      margin-bottom: 0.5rem;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .get-started-description {
+      color: $text-gray;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      max-width: 50vw;
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        font-size: 1rem;
+      }
     }
   }
 
@@ -41,16 +59,21 @@ $text-gray: #808080;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
+    @media screen and (max-width: 768px) {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
     &:hover {
       background-color: black;
+
+      svg {
+        transform: translateX(4px);
+      }
     }
 
     svg {
       transition: transform 0.3s ease;
-    }
-
-    &:hover svg {
-      transform: translateX(4px);
     }
   }
 }

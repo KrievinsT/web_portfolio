@@ -1,17 +1,20 @@
 import React from 'react';
 import './GetStarted.scss';
 
-const Start = () => {
+const GetStarted = () => {
   return (
-    <div className="start-container">
-      <div className="start-content">
-        <div className="start-line"></div>
-        <div className="start-text">Ready to Get Started?</div>
-        <div className="start-line"></div>
+    <div className="get-started-container">
+      <div className="get-started-content">
+        <div className="get-started-text-wrapper">
+          <h2 className="get-started-title">Ready to Get Started?</h2>
+          <p className="get-started-description">
+          Manage, invest, and grow your wealth with smart financial tools. Join thousands who trust Fintech to simplify their financial journey.
+          </p>
+        </div>
+        <button className="get-started-btn">Get Started</button>
       </div>
-      <button className="get-started-btn">Get Started</button>
     </div>
   );
 };
 
-export default Start;
+export default GetStarted;
