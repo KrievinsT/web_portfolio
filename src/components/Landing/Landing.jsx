@@ -8,7 +8,7 @@
   const Landing = () => {
     return (
       <div className="landing-container">
-        <div className="content-wrapper">
+        <div className="content-wrapped">
           <div className="left-section">
             <div className="hero-text">
               <h1>

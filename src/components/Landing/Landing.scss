@@ -3,14 +3,18 @@ $text-gray: #808080;
 $background-dark: #000000;
 
 .landing-container {
-  min-height: 100vh;
+  min-height: 40vh;
   background-color: $background-dark;
   color: white;
   padding: 2rem;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 }
 
-.content-wrapper {
+.content-wrapped {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -18,20 +22,39 @@ $background-dark: #000000;
   align-items: center;
   gap: 4rem;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    gap: 2rem;
+  }
 }
 
 .left-section {
   flex: 1;
   max-width: 600px;
 
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
+
   .hero-text {
     margin-bottom: 3rem;
 
+    @media (max-width: 768px) {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
     h1 {
-      font-size: 3.5  rem;
+      font-size: 3.5rem;
       font-weight: bold;
       line-height: 1.2;
       margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
 
       .gradient-text {
         background: linear-gradient(to bottom, $primary-purple, #9747ff);
@@ -45,6 +68,11 @@ $background-dark: #000000;
       font-size: 1.25rem;
       line-height: 1.6;
       margin-bottom: 2rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
     }
   }
 
@@ -60,6 +88,12 @@ $background-dark: #000000;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.9rem;
+    }
 
     &:hover {
       background-color: black;
@@ -78,14 +112,27 @@ $background-dark: #000000;
 .reviews-section {
   margin: 3rem 0;
 
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
   .stars {
     display: flex;
     gap: 0.25rem;
     margin-bottom: 0.5rem;
 
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+
     .star {
       color: #ffd700;
       font-size: 1.25rem;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -97,6 +144,10 @@ $background-dark: #000000;
   .user-avatars {
     display: flex;
     align-items: center;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
 
     .avatar-circle {
       width: 48px;
@@ -110,6 +161,11 @@ $background-dark: #000000;
 
       &:first-child {
         margin-left: 0;
+      }
+
+      @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
       }
     }
   }
@@ -129,6 +185,11 @@ $background-dark: #000000;
   height: 500px;
   perspective: 1400px;
 
+  @media (max-width: 768px) {
+    width: 280px;
+    height: 400px;
+  }
+
   .card {
     position: absolute;
     right: 0;
@@ -139,6 +200,11 @@ $background-dark: #000000;
     transition: transform 0.5s ease;
     backface-visibility: hidden;
     user-select: none;
+
+    @media (max-width: 768px) {
+      width: 280px;
+      height: 180px;
+    }
 
     img {
       width: 100%;
@@ -161,6 +227,20 @@ $background-dark: #000000;
       transform: translateZ(-90px) translateY(150px);
       z-index: 1;
     }
+
+    @media (max-width: 768px) {
+      &.card-1 {
+        transform: translateZ(0) translateY(0);
+      }
+
+      &.card-2 {
+        transform: translateZ(-20px) translateY(40px);
+      }
+
+      &.card-3 {
+        transform: translateZ(-40px) translateY(80px);
+      }
+    }
   }
 }
 
@@ -173,9 +253,21 @@ $background-dark: #000000;
   padding: 1.5rem;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    margin: 2rem 0;
+    gap: 2rem;
+    padding: 1rem;
+  }
+
   .stat-item {
+    text-align: center;
+
     .stat-number {
       font-size: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.25rem;
+      }
     }
 
     p {
@@ -187,7 +279,7 @@ $background-dark: #000000;
 
 @media (max-width: 1200px) {
   .content-wrapper {
-    flex-direction:column;
+    flex-direction: column;
     text-align: center;
     gap: 2rem;
   }
