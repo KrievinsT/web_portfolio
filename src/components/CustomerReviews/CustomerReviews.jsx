@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './CustomerReviews.scss';
 
 const CustomerReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [reviewsState, setReviewsState] = useState([]);
 
   const reviews = [
     {
@@ -32,12 +33,35 @@ const CustomerReviews = () => {
     },
   ];
 
+  // Prepare reviews for infinite scroll
+  useEffect(() => {
+    // Create an extended array with duplicated reviews to enable smooth infinite scrolling
+    const extendedReviews = [
+      ...reviews.slice(-1), // Last review
+      ...reviews,
+      ...reviews.slice(0, 1) // First review
+    ];
+    setReviewsState(extendedReviews);
+  }, [reviews]);
+
   const handlePrevClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
+    setCurrentIndex((prevIndex) => {
+      // If we're at the first review, jump to the last original review without animation
+      if (prevIndex === 0) {
+        return reviews.length - 1;
+      }
+      return prevIndex - 1;
+    });
   };
 
   const handleNextClick = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+    setCurrentIndex((prevIndex) => {
+      // If we're at the last review, reset to the first review
+      if (prevIndex === reviews.length - 1) {
+        return 0;
+      }
+      return prevIndex + 1;
+    });
   };
 
   return (
@@ -56,11 +80,17 @@ const CustomerReviews = () => {
         </div>
       </div>
       <div className="review-container">
-        {reviews.map((review, index) => (
+        {reviewsState.map((review, index) => (
           <div
-            key={index}
-            className={`review-card ${index === currentIndex ? 'active' : ''}`}
-            style={{ transform: `translateX(-${currentIndex * 25}%)` }}
+            key={`${index}-${review.author}`}
+            className={`review-card 
+              ${index === currentIndex + 1 ? 'active' : ''}
+              ${index === 0 || index === reviewsState.length - 1 ? 'duplicate' : ''}`}
+            style={{ 
+              transform: `translateX(-${(currentIndex + 1) * 25}%)`,
+              // Ensure duplicate slides are hidden
+              visibility: index === 0 || index === reviewsState.length - 1 ? 'hidden' : 'visible'
+            }}
           >
             <blockquote>{review.quote}</blockquote>
             <div className="reviewer">
