@@ -16,11 +16,9 @@ const Header = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    // Close dropdown when mobile menu is opened/closed
     setIsDropdownOpen(false);
   };
 
-  // Close mobile menu when screen becomes larger
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1024) {
@@ -41,8 +39,7 @@ const Header = () => {
           alt="FINZ"
         />
       </div>
-      
-      {/* Desktop Navigation */}
+
       <nav className="header__nav header__nav--desktop">
         <div className="header__nav-links">
           <a href="/" className="header__nav-link header__nav-link--active">Home</a>
@@ -86,7 +83,6 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu Toggle */}
       <button 
         className="header__mobile-menu-toggle"
         onClick={toggleMobileMenu}
@@ -94,7 +90,6 @@ const Header = () => {
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile Navigation Slide-out Menu */}
       <div 
         className={`header__nav-mobile ${isMobileMenuOpen ? 'header__nav-mobile--open' : ''}`}
         onClick={(e) => {
@@ -107,7 +102,6 @@ const Header = () => {
           <a href="/" className="header__nav-mobile-link header__nav-mobile-link--active">Home</a>
           <a href="/features" className="header__nav-mobile-link">Features</a>
           
-          {/* Mobile Dropdown for Pages */}
           <div 
             className="header__nav-mobile-dropdown"
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}

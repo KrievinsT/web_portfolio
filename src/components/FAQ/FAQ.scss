@@ -6,11 +6,11 @@ $background-dark: #000000;
   min-height: 100vh;
   background-color: $background-dark;
   color: white;
-  padding: 4rem 2rem; // Reduced horizontal padding for smaller screens
+  padding: 4rem 2rem; 
   align-items: center;
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem; // Further reduced padding on very small screens
+    padding: 2rem 1rem; 
   }
 }
 
@@ -37,7 +37,7 @@ $background-dark: #000000;
     font-weight: bold;
 
     @media (max-width: 768px) {
-      font-size: 2rem; // Slightly smaller on mobile
+      font-size: 2rem;
     }
 
     .primary-purple {

@@ -6,10 +6,10 @@ $background-dark: #000000;
   min-height: 100vh;
   background-color: $background-dark;
   color: white;
-  padding: 4rem 2rem; // Reduced horizontal padding
+  padding: 4rem 2rem; 
 
   @media (max-width: 768px) {
-    padding: 2rem 1rem; // Further reduced padding on very small screens
+    padding: 2rem 1rem;
   }
 }
 
@@ -38,7 +38,7 @@ $background-dark: #000000;
   font-weight: bold;
 
   @media (max-width: 768px) {
-    font-size: 2.5rem; // Smaller on mobile
+    font-size: 2.5rem; 
   }
 
   .gradient-text {
@@ -87,7 +87,7 @@ $background-dark: #000000;
     object-fit: cover;
 
     @media (max-width: 768px) {
-      height: 250px; // Slightly taller on mobile for better visibility
+      height: 250px; 
     }
   }
 

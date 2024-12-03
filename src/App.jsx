@@ -10,6 +10,7 @@ import PricingPackage from './components/PricingPackage/PricingPackage';
 import CustomerReviews from './components/CustomerReviews/CustomerReviews';
 import Blogs from './components/Blogs/Blogs';
 import FAQ from './components/FAQ/FAQ';
+import Start from './components/GetStarted/GetStarted';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
       <CustomerReviews />
       <Blogs />
       <FAQ />
+      <Start />
+    
     </>
   );
 }

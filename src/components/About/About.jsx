@@ -5,9 +5,7 @@ const About = () => {
   return (
     <div className="about-container">
       <div className="content-wrapper">
-        {/* Hero Section */}
         <div className="hero-section">
-          {/* Left Column */}
           <div className="hero-content">
             <h1 className="heading">
               We are the best Online{' '}
@@ -40,7 +38,6 @@ const About = () => {
             </a>
           </div>
 
-          {/* Right Column - Features Grid */}
           <div className="features-grid">
             <div className="feature-item">
               <div className="feature-icon">
@@ -89,7 +86,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
       <div className="stats-sect">
         <div className="stat-item">
           <h2>15+</h2>

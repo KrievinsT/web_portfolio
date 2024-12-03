@@ -33,20 +33,17 @@ const CustomerReviews = () => {
     },
   ];
 
-  // Prepare reviews for infinite scroll
   useEffect(() => {
-    // Create an extended array with duplicated reviews to enable smooth infinite scrolling
     const extendedReviews = [
-      ...reviews.slice(-1), // Last review
+      ...reviews.slice(-1),
       ...reviews,
-      ...reviews.slice(0, 1) // First review
+      ...reviews.slice(0, 1) 
     ];
     setReviewsState(extendedReviews);
   }, [reviews]);
 
   const handlePrevClick = () => {
     setCurrentIndex((prevIndex) => {
-      // If we're at the first review, jump to the last original review without animation
       if (prevIndex === 0) {
         return reviews.length - 1;
       }
@@ -56,7 +53,6 @@ const CustomerReviews = () => {
 
   const handleNextClick = () => {
     setCurrentIndex((prevIndex) => {
-      // If we're at the last review, reset to the first review
       if (prevIndex === reviews.length - 1) {
         return 0;
       }
@@ -88,7 +84,6 @@ const CustomerReviews = () => {
               ${index === 0 || index === reviewsState.length - 1 ? 'duplicate' : ''}`}
             style={{ 
               transform: `translateX(-${(currentIndex + 1) * 25}%)`,
-              // Ensure duplicate slides are hidden
               visibility: index === 0 || index === reviewsState.length - 1 ? 'hidden' : 'visible'
             }}
           >

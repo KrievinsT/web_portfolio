@@ -1,0 +1,56 @@
+$primary-purple: #7e5bef;
+$text-gray: #808080;
+
+.start-container {
+  background-color: #000;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  .start-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .start-line {
+      flex: 1;
+      height: 1px;
+      background-color: $text-gray;
+    }
+
+    .start-text {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  .get-started-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid $primary-purple;
+    background-color: $primary-purple;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: black;
+    }
+
+    svg {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover svg {
+      transform: translateX(4px);
+    }
+  }
+}

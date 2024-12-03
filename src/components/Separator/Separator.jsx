@@ -1,9 +1,7 @@
-// Separator.jsx
 import React from 'react';
 import './Separator.scss';
 
 const Separator = () => {
-  // Array of actual image URLs
   const separatorItems = [
     'https://cdn.prod.website-files.com/6700f419829e38664506b649/67122823adeea9a063a7e30c_hero-icon-02.svg',
     'https://cdn.prod.website-files.com/6700f419829e38664506b649/6704efd5532e6852265f263d_logo-04.svg',
@@ -15,7 +13,6 @@ const Separator = () => {
   return (
     <div className="logo-separator">
       <div className="scroll-container">
-        {/* First set of items */}
         {separatorItems.map((src, index) => (
           <img
             key={`first-${index}`}
@@ -23,7 +20,6 @@ const Separator = () => {
             alt="separator item"
           />
         ))}
-        {/* Duplicate set for seamless loop */}
         {separatorItems.map((src, index) => (
           <img
             key={`second-${index}`}
