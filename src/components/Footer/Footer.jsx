@@ -11,6 +11,7 @@ const Footer = () => {
           </div>
           <a href="#" className="open-account-btn">Open a free account today</a>
         </div>
+    <div className="footer_location">
       <div className="footer-content">
 
         <div className="quick-links">
@@ -51,10 +52,12 @@ const Footer = () => {
             <li><a href="#">Protected</a></li>
           </ul>
         </div>
-        <div className="location">
+      </div>
+      <div className="location">
           <h3 className="footer-title">Location</h3>
           <p>501 Locust Ln Willits, California(CA), 95490</p>
           <div className="contact-info">
+          <h3 className="footer-title">Contact us</h3>
             <p>+1 (406) 555-0120</p>
             <p>hello@example.com</p>
           </div>
@@ -76,7 +79,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+    </div>
       <div className="footer-bottom">
         <p>&copy; 2023 Finz. All rights reserved.</p>
       </div>

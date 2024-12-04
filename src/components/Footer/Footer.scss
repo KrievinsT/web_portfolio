@@ -31,9 +31,10 @@ $background-dark: #000000;
   }
 
   .footer-title {
-    font-size: 1.125rem;
+    font-size: 0.9rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    color: $text-gray;
   }
 
   .logo-and-description {
@@ -61,6 +62,7 @@ $background-dark: #000000;
     }
   }
 
+
   .open-account-btn {
     color: white;
     text-decoration: none;
@@ -79,12 +81,13 @@ $background-dark: #000000;
     list-style-type: none;
     padding: 0;
     margin: 0;
+    
 
     li {
       margin-bottom: 0.5rem;
 
       a {
-        color: $text-gray;
+        color: white;
         text-decoration: none;
         transition: color 0.3s ease;
 
@@ -95,9 +98,15 @@ $background-dark: #000000;
     }
   }
 
+ .footer_location {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+
+ }
   .location {
     p {
-      color: $text-gray;
+      color: white;
       margin-bottom: 1rem;
     }
 
