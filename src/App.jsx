@@ -11,6 +11,7 @@ import CustomerReviews from './components/CustomerReviews/CustomerReviews';
 import Blogs from './components/Blogs/Blogs';
 import FAQ from './components/FAQ/FAQ';
 import Start from './components/GetStarted/GetStarted';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Blogs />
       <FAQ />
       <Start />
+      <Footer />
     
     </>
   );
