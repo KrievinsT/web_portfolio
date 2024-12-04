@@ -1,4 +1,4 @@
-$primary-purple: #7e5bef;
+$primary-purple: #a892f0;
 $text-gray: #808080;
 $background-dark: #000000;
 
@@ -12,10 +12,11 @@ $background-dark: #000000;
   }
 
   .footer-content {
-    max-width: 1200px;
+    // max-width: 1200px;
     // margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
     gap: 2rem;
 
     @media (max-width: 1200px) {
@@ -57,18 +58,20 @@ $background-dark: #000000;
         max-width: 35vw;
       }
 
-      .open-account-btn {
-        background-color: $primary-purple;
-        color: white;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        transition: background-color 0.3s ease;
+    }
+  }
 
-        &:hover {
-          background-color: lighten($primary-purple, 10%);
-        }
-      }
+  .open-account-btn {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+    //   font-size: 1.56rem;
+      color: $primary-purple;
     }
   }
 
