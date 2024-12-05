@@ -70,8 +70,7 @@ const About = () => {
                 <h3>Real-Time Analytics</h3>
                 <p>Access detailed transaction reports and real-time insights to optimize.</p>
               </div>
-            </div>
-            <a href="/about" className="about-btn">
+              <a href="/about" className="about-btn">
               About Finz
               <svg
                 width="20"
@@ -87,6 +86,8 @@ const About = () => {
                 <path d="M7 17 17 7" />
               </svg>
             </a>
+            </div>
+        
           </div>
         </div>
 
