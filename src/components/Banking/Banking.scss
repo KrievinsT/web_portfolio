@@ -113,6 +113,7 @@ $background-dark: #000000;
     justify-content: space-between;
     align-items: center;
     min-height: 350px;
+    border: 1px solid rgb(48, 48, 48);
 
     @media (max-width: 768px) {
       grid-column: span 1;
@@ -126,6 +127,7 @@ $background-dark: #000000;
       flex: 1;
       max-width: 50%;
       padding-right: 2rem;
+      
 
       @media (max-width: 768px) {
         max-width: 100%;
@@ -155,6 +157,7 @@ $background-dark: #000000;
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
+      
 
       @media (max-width: 768px) {
         justify-content: center;
@@ -177,6 +180,7 @@ $background-dark: #000000;
   .service-item {
     background: rgba(237, 237, 237, 0.085);
     border-radius: 1rem;
+    border: 1px solid rgb(48, 48, 48);
     padding: 2rem;
     display: flex;
     flex-direction: column;
