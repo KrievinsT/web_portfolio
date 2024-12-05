@@ -24,6 +24,7 @@ $background-dark: #000000;
   padding: 2rem;
 
   @media (max-width: 768px) {
+    flex-direction: column;
     padding: 1rem;
     gap: 2rem;
   }
@@ -32,13 +33,18 @@ $background-dark: #000000;
 .left-section {
   flex: 1;
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   @media (max-width: 768px) {
     max-width: 100%;
+    align-items: center;
   }
 
   .hero-text {
     margin-bottom: 3rem;
+    width: 100%;
 
     @media (max-width: 768px) {
       margin-bottom: 2rem;
@@ -72,6 +78,7 @@ $background-dark: #000000;
       @media (max-width: 768px) {
         font-size: 1rem;
         margin-bottom: 1.5rem;
+        text-align: center;
       }
     }
   }
@@ -88,8 +95,10 @@ $background-dark: #000000;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    align-self: flex-start;
 
     @media (max-width: 768px) {
+      align-self: center;
       margin: 0 auto;
       padding: 0.75rem 1.5rem;
       font-size: 0.9rem;
@@ -111,6 +120,7 @@ $background-dark: #000000;
 
 .reviews-section {
   margin: 3rem 0;
+  width: 100%;
 
   @media (max-width: 768px) {
     margin: 2rem 0;
@@ -177,6 +187,10 @@ $background-dark: #000000;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .stacked-cards {
@@ -186,7 +200,8 @@ $background-dark: #000000;
   perspective: 1400px;
 
   @media (max-width: 768px) {
-    width: 280px;
+    width: 100%;
+    max-width: 320px;
     height: 400px;
   }
 
@@ -202,8 +217,12 @@ $background-dark: #000000;
     user-select: none;
 
     @media (max-width: 768px) {
-      width: 280px;
+      width: 100%;
+      max-width: 280px;
       height: 180px;
+      right: auto;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     img {
@@ -230,15 +249,15 @@ $background-dark: #000000;
 
     @media (max-width: 768px) {
       &.card-1 {
-        transform: translateZ(0) translateY(0);
+        transform: translateX(-50%) translateZ(0);
       }
 
       &.card-2 {
-        transform: translateZ(-20px) translateY(40px);
+        transform: translateX(-50%) translateZ(-20px) translateY(40px);
       }
 
       &.card-3 {
-        transform: translateZ(-40px) translateY(80px);
+        transform: translateX(-50%) translateZ(-40px) translateY(80px);
       }
     }
   }
@@ -257,6 +276,8 @@ $background-dark: #000000;
     margin: 2rem 0;
     gap: 2rem;
     padding: 1rem;
+    flex-direction: column;
+    align-items: center;
   }
 
   .stat-item {
@@ -277,23 +298,18 @@ $background-dark: #000000;
   }
 }
 
-@media (max-width: 1200px) {
-  .content-wrapper {
+@media (max-width: 1200px) and (min-width: 769px) {
+  .content-wrapped {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
   }
 
   .left-section {
-    .get-started-btn {
-      margin: 0 auto;
-    }
-  }
+    align-items: center;
 
-  .reviews-section {
-    .stars,
-    .user-avatars {
-      justify-content: center;
+    .get-started-btn {
+      align-self: center;
     }
   }
 
@@ -317,21 +333,6 @@ $background-dark: #000000;
 
       &.card-3 {
         transform: translateX(-50%) translateZ(-40px) translateY(80px);
-      }
-    }
-  }
-
-  .stats-section {
-    flex-direction: column;
-    gap: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .left-section {
-    .hero-text {
-      h1 {
-        font-size: 3rem;
       }
     }
   }
