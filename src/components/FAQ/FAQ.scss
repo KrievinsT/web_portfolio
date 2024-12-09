@@ -166,6 +166,7 @@ $background-dark: #000000;
       max-width: 400px;
       height: auto;
       border-radius: 1rem;
+      border-bottom: solid rgb(126, 126, 126) 1px;
 
       @media (min-width: 1024px) {
         width: 80%;
