@@ -5,6 +5,7 @@ import './CustomerReviews.scss';
 const CustomerReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [reviewsState, setReviewsState] = useState([]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const reviews = [
     {
@@ -35,29 +36,35 @@ const CustomerReviews = () => {
 
   useEffect(() => {
     const extendedReviews = [
-      ...reviews.slice(-1),
+      reviews[reviews.length - 1],
       ...reviews,
-      ...reviews.slice(0, 1) 
+      reviews[0]
     ];
     setReviewsState(extendedReviews);
-  }, [reviews]);
+  }, []);
 
   const handlePrevClick = () => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
     setCurrentIndex((prevIndex) => {
-      if (prevIndex === 0) {
-        return reviews.length - 1;
-      }
-      return prevIndex - 1;
+      const newIndex = prevIndex > 0 ? prevIndex - 1 : reviews.length - 1;
+      return newIndex;
     });
+
+    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   const handleNextClick = () => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
     setCurrentIndex((prevIndex) => {
-      if (prevIndex === reviews.length - 1) {
-        return 0;
-      }
-      return prevIndex + 1;
+      const newIndex = prevIndex < reviews.length - 1 ? prevIndex + 1 : 0;
+      return newIndex;
     });
+
+    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   return (
