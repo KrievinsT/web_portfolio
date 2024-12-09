@@ -91,22 +91,15 @@ $background-dark: #000000;
       gap: 1.5rem;
     }
 
-    .faq-question {
-      font-size: 1rem;
-      cursor: pointer;
-      transition: color 0.3s ease;
+    .faq-question-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       position: relative;
       padding-bottom: 1rem;
-      text-align: center;
 
       @media (min-width: 1024px) {
-        font-size: 1.2rem;
-        text-align: left;
         padding-bottom: 1.5rem;
-      }
-
-      &:hover {
-        color: $primary-purple;
       }
 
       &::after {
@@ -121,6 +114,36 @@ $background-dark: #000000;
 
       &:last-child::after {
         display: none;
+      }
+    }
+
+    .faq-question {
+      font-size: 1rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      @media (min-width: 1024px) {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        color: $primary-purple;
+      }
+    }
+
+    .faq-arrow {
+      display: block;
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateX(5px);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
   }

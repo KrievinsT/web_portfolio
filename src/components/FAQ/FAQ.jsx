@@ -15,14 +15,78 @@ const FAQ = () => {
         </div>
         <div className="faq-section">
           <div className="faq-questions">
-            <div className="faq-question">What is Finz ?</div>
-            <div className="faq-question">How do I get started with Finz ?</div>
-            <div className="faq-question">What payment methods does Finz support?</div>
-            <div className="faq-question">Is my financial data safe with Finz ?</div>
-            <div className="faq-question">Can I track my spending with Finz ?</div>
-            <div className="faq-question">What if I encounter issues with my account?</div>
-            <div className="faq-question">Are there any hidden fees?</div>
-            <div className="faq-question">Can I upgrade or downgrade my plan?</div>
+            <div className="faq-question-container">
+              <div className="faq-question">What is Finz ?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">How do I get started with Finz ?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">What payment methods does Finz support?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">Is my financial data safe with Finz ?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">Can I track my spending with Finz ?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">What if I encounter issues with my account?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">Are there any hidden fees?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
+            <div className="faq-question-container">
+              <div className="faq-question">Can I upgrade or downgrade my plan?</div>
+              <a href="#" className="faq-arrow">
+                <img
+                  src="https://cdn.prod.website-files.com/6700f419829e38664506b649/67076916c9081bdd56408804_faq-icon.svg"
+                  alt="Arrow"
+                />
+              </a>
+            </div>
           </div>
           <div className="faq-image">
             <img
