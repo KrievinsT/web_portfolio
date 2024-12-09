@@ -8,7 +8,7 @@ const GetStarted = () => {
         <div className="get-started-text-wrapper">
           <h2 className="get-started-title">Ready to Get Started?</h2>
           <p className="get-started-description">
-          Manage, invest, and grow your wealth with smart financial tools. Join thousands who trust Fintech to simplify their financial journey.
+           Take control of your financial transactions with Finable. Our intuitive platform makes it easy to manage payments, track spending, and ensure secure transactions.
           </p>
         </div>
         <button className="get-started-btn">Get Started</button>
