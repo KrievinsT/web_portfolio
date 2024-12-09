@@ -76,41 +76,38 @@ $background-dark: #000000;
 
   .review-container {
     display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-
-    @media (max-width: 768px) {
-      overflow-x: scroll;
-      padding-bottom: 1rem;
-    }
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 
     .review-card {
-      margin: 1rem;
-      max-height: 350px;
       flex: 0 0 25%;
+      width: 25%;
+      margin: 1rem;
       padding: 1.5rem;
       background-color: #1f1f1f;
       border-radius: 0.5rem;
       transition: transform 0.3s ease-in-out;
-      
-      &.duplicate {
-        position: absolute;
+      max-height: 350px;
+      opacity: 1;
+
+      &.hidden {
+        opacity: 0;
         visibility: hidden;
+        position: absolute;
       }
 
       @media (max-width: 1024px) {
         flex: 0 0 40%;
+        width: 40%;
       }
 
       @media (max-width: 768px) {
         flex: 0 0 80%;
+        width: 80%;
         margin: 1rem 0.5rem;
         max-height: none;
         padding: 1.2rem;
-      }
-
-      &.active {
-        transform: translateX(0);
       }
 
       blockquote {
@@ -167,9 +164,5 @@ $background-dark: #000000;
         }
       }
     }
-  }
-
-  .review-container::-webkit-scrollbar {
-    display: none;
   }
 }

@@ -4,10 +4,9 @@ import './CustomerReviews.scss';
 
 const CustomerReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [reviewsState, setReviewsState] = useState([]);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [reviews, setReviews] = useState([]);
 
-  const reviews = [
+  const originalReviews = [
     {
       quote: "Finz has completely transformed the way I handle online payments. The app is intuitive, secure, and incredibly fast. I can't imagine going back to my old payment methods!",
       author: "Sarah Thompson",
@@ -35,36 +34,30 @@ const CustomerReviews = () => {
   ];
 
   useEffect(() => {
+    // Create an extended array to enable infinite scrolling
     const extendedReviews = [
-      reviews[reviews.length - 1],
-      ...reviews,
-      reviews[0]
+      ...originalReviews,
+      ...originalReviews.slice(0, 1)
     ];
-    setReviewsState(extendedReviews);
+    setReviews(extendedReviews);
   }, []);
 
   const handlePrevClick = () => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex > 0 ? prevIndex - 1 : reviews.length - 1;
-      return newIndex;
+    setCurrentIndex(prev => {
+      if (prev === 0) {
+        return originalReviews.length - 1;
+      }
+      return prev - 1;
     });
-
-    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   const handleNextClick = () => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex < reviews.length - 1 ? prevIndex + 1 : 0;
-      return newIndex;
+    setCurrentIndex(prev => {
+      if (prev === originalReviews.length - 1) {
+        return 0;
+      }
+      return prev + 1;
     });
-
-    setTimeout(() => setIsTransitioning(false), 300);
   };
 
   return (
@@ -83,15 +76,14 @@ const CustomerReviews = () => {
         </div>
       </div>
       <div className="review-container">
-        {reviewsState.map((review, index) => (
+        {reviews.map((review, index) => (
           <div
-            key={`${index}-${review.author}`}
+            key={index}
             className={`review-card 
-              ${index === currentIndex + 1 ? 'active' : ''}
-              ${index === 0 || index === reviewsState.length - 1 ? 'duplicate' : ''}`}
+              ${index >= currentIndex && index < currentIndex + 4 ? 'visible' : 'hidden'}
+              ${index === currentIndex + 1 ? 'active' : ''}`}
             style={{ 
-              transform: `translateX(-${(currentIndex + 1) * 25}%)`,
-              visibility: index === 0 || index === reviewsState.length - 1 ? 'hidden' : 'visible'
+              transform: `translateX(calc(-100% * ${currentIndex}))`,
             }}
           >
             <blockquote>{review.quote}</blockquote>
