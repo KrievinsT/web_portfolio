@@ -44,8 +44,8 @@ $background-dark: #000000;
     padding: 2rem;
 
     &-title {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.1rem;
+      // font-weight: bold;
       margin-bottom: 1rem;
     }
 
@@ -65,9 +65,11 @@ $background-dark: #000000;
       padding: 0;
       margin-bottom: 2rem;
       text-align: left;
+      padding-top: 1rem;
 
       li {
         margin-bottom: 0.5rem;
+        padding-top: 1rem;
       }
     }
 
