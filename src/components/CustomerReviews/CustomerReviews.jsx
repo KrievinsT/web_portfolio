@@ -60,19 +60,20 @@ const CustomerReviews = () => {
   }, [isTransitioning, infiniteReviews.length]);
 
   const handlePrevClick = useCallback(() => {
-    if (isTransitioning) return;
+
+    if (isTransitioning || currentIndex === 0) return;
 
     setIsTransitioning(true);
     setCurrentIndex(prevIndex => {
       return prevIndex === 0 
-        ? infiniteReviews.length - 0.5 
+        ? 0 
         : prevIndex - 0.5;
     });
 
     setTimeout(() => {
       setIsTransitioning(false);
     }, 300);
-  }, [isTransitioning, infiniteReviews.length]);
+  }, [isTransitioning, currentIndex]);
 
   return (
     <div className="customer-reviews">
@@ -81,7 +82,11 @@ const CustomerReviews = () => {
           <span className="section-title--primary">What Our</span> Customers Say
         </h2>
         <div className="controls">
-          <button className="prev-btn" onClick={handlePrevClick}>
+          <button 
+            className="prev-btn" 
+            onClick={handlePrevClick}
+            disabled={currentIndex === 0}
+          >
             <ChevronLeft size={24} />
           </button>
           <button className="next-btn" onClick={handleNextClick}>
