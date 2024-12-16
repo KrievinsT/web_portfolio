@@ -50,26 +50,24 @@ $background-dark: #000000;
     .prev-btn,
     .next-btn {
       background: none;
-      border: none;
+      border: 1px solid white;
       cursor: pointer;
       color: #fff;
-      border: 1px solid white;
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
+      transition: all 0.3s ease;
 
       @media (max-width: 768px) {
         width: 35px;
         height: 35px;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
       }
     }
   }

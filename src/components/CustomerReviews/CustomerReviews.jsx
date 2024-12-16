@@ -51,8 +51,7 @@ const CustomerReviews = () => {
 
     setIsTransitioning(true);
     setCurrentIndex(prevIndex => {
-      // Move to next review, wrapping around infinitely
-      return (prevIndex + 1) % infiniteReviews.length;
+      return (prevIndex + 0.5) % infiniteReviews.length;
     });
 
     setTimeout(() => {
@@ -65,10 +64,9 @@ const CustomerReviews = () => {
 
     setIsTransitioning(true);
     setCurrentIndex(prevIndex => {
-      // Move to previous review, wrapping around infinitely
       return prevIndex === 0 
-        ? infiniteReviews.length - 1 
-        : prevIndex - 1;
+        ? infiniteReviews.length - 0.5 
+        : prevIndex - 0.5;
     });
 
     setTimeout(() => {
@@ -95,7 +93,7 @@ const CustomerReviews = () => {
         <div 
           className="review-wrapper" 
           style={{ 
-            transform: `translateX(calc(-100% * ${currentIndex}))`,
+            transform: `translateX(calc(-50% * ${currentIndex}))`,
             transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none'
           }}
         >
@@ -103,8 +101,7 @@ const CustomerReviews = () => {
             <div
               key={`${index}-${review.author}`}
               className={`review-card 
-                ${index >= currentIndex && index < currentIndex + 4 ? 'visible' : 'hidden'}
-                ${index === currentIndex + 1 ? 'active' : ''}`}
+                ${index >= currentIndex && index < currentIndex + 2 ? 'visible' : ''}`}
             >
               <blockquote>{review.quote}</blockquote>
               <div className="reviewer">
