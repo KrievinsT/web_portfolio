@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './CustomerReviews.scss';
 
 const CustomerReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [reviews, setReviews] = useState([]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const originalReviews = [
     {
@@ -33,32 +34,47 @@ const CustomerReviews = () => {
     },
   ];
 
-  useEffect(() => {
-    // Create an extended array to enable infinite scrolling
-    const extendedReviews = [
-      ...originalReviews,
-      ...originalReviews.slice(0, 1)
-    ];
-    setReviews(extendedReviews);
+  const infiniteReviews = useMemo(() => {
+    const extendedReviews = [];
+    while (extendedReviews.length < 100) {
+      extendedReviews.push(...originalReviews);
+    }
+    return extendedReviews;
   }, []);
 
-  const handlePrevClick = () => {
-    setCurrentIndex(prev => {
-      if (prev === 0) {
-        return originalReviews.length - 1;
-      }
-      return prev - 1;
-    });
-  };
+  useEffect(() => {
+    setReviews(infiniteReviews);
+  }, [infiniteReviews]);
 
-  const handleNextClick = () => {
-    setCurrentIndex(prev => {
-      if (prev === originalReviews.length - 1) {
-        return 0;
-      }
-      return prev + 1;
+  const handleNextClick = useCallback(() => {
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    setCurrentIndex(prevIndex => {
+      // Move to next review, wrapping around infinitely
+      return (prevIndex + 1) % infiniteReviews.length;
     });
-  };
+
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 300);
+  }, [isTransitioning, infiniteReviews.length]);
+
+  const handlePrevClick = useCallback(() => {
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
+    setCurrentIndex(prevIndex => {
+      // Move to previous review, wrapping around infinitely
+      return prevIndex === 0 
+        ? infiniteReviews.length - 1 
+        : prevIndex - 1;
+    });
+
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 300);
+  }, [isTransitioning, infiniteReviews.length]);
 
   return (
     <div className="customer-reviews">
@@ -76,32 +92,37 @@ const CustomerReviews = () => {
         </div>
       </div>
       <div className="review-container">
-        {reviews.map((review, index) => (
-          <div
-            key={index}
-            className={`review-card 
-              ${index >= currentIndex && index < currentIndex + 4 ? 'visible' : 'hidden'}
-              ${index === currentIndex + 1 ? 'active' : ''}`}
-            style={{ 
-              transform: `translateX(calc(-100% * ${currentIndex}))`,
-            }}
-          >
-            <blockquote>{review.quote}</blockquote>
-            <div className="reviewer">
-              <div className="avatar">
-                <img 
-                  src={review.avatar} 
-                  alt={`${review.author}'s profile`} 
-                  className="avatar-image"
-                />
-              </div>
-              <div>
-                <h4>{review.author}</h4>
-                <p>{review.role}</p>
+        <div 
+          className="review-wrapper" 
+          style={{ 
+            transform: `translateX(calc(-100% * ${currentIndex}))`,
+            transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none'
+          }}
+        >
+          {reviews.map((review, index) => (
+            <div
+              key={`${index}-${review.author}`}
+              className={`review-card 
+                ${index >= currentIndex && index < currentIndex + 4 ? 'visible' : 'hidden'}
+                ${index === currentIndex + 1 ? 'active' : ''}`}
+            >
+              <blockquote>{review.quote}</blockquote>
+              <div className="reviewer">
+                <div className="avatar">
+                  <img 
+                    src={review.avatar} 
+                    alt={`${review.author}'s profile`} 
+                    className="avatar-image"
+                  />
+                </div>
+                <div>
+                  <h4>{review.author}</h4>
+                  <p>{review.role}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
