@@ -60,7 +60,6 @@ const CustomerReviews = () => {
   }, [isTransitioning, infiniteReviews.length]);
 
   const handlePrevClick = useCallback(() => {
-
     if (isTransitioning || currentIndex === 0) return;
 
     setIsTransitioning(true);
@@ -87,28 +86,33 @@ const CustomerReviews = () => {
             onClick={handlePrevClick}
             disabled={currentIndex === 0}
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={20} />
           </button>
           <button className="next-btn" onClick={handleNextClick}>
-            <ChevronRight size={24} />
+            <ChevronRight size={20}/>
           </button>
         </div>
       </div>
-      <div className="review-container">
+      <div className="reviews-section">
         <div 
-          className="review-wrapper" 
+          className="reviews-wrapper" 
           style={{ 
             transform: `translateX(calc(-50% * ${currentIndex}))`,
             transition: isTransitioning ? 'transform 0.3s ease-in-out' : 'none'
           }}
         >
           {reviews.map((review, index) => (
-            <div
-              key={`${index}-${review.author}`}
-              className={`review-card 
+            <div 
+              key={`review-column-${index}-${review.author}`} 
+              className={`review-column 
                 ${index >= currentIndex && index < currentIndex + 2 ? 'visible' : ''}`}
             >
-              <blockquote>{review.quote}</blockquote>
+              <div className="review-card">
+                <img src="https://cdn.prod.website-files.com/6700f419829e38664506b649/6706706c90c7cc1188965146_slide-icon.svg" alt="Quotation mark" className="quotation-mark" />
+                <div className="review-content">
+                  <blockquote>{review.quote}</blockquote>
+                </div>
+              </div>
               <div className="reviewer">
                 <div className="avatar">
                   <img 
@@ -117,7 +121,7 @@ const CustomerReviews = () => {
                     className="avatar-image"
                   />
                 </div>
-                <div>
+                <div className="reviewer-details">
                   <h4>{review.author}</h4>
                   <p>{review.role}</p>
                 </div>

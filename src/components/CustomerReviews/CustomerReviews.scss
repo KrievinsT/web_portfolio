@@ -53,116 +53,145 @@ $background-dark: #000000;
       border: 1px solid white;
       cursor: pointer;
       color: #fff;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      display: grid;
+
+      &:hover {
+        background-color: $primary-purple;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        svg {
+          stroke: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  .reviews-section {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .reviews-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .review-column {
+    flex: 0 0 33.33%;
+    width: 33.33%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 1024px) {
+      flex: 0 0 50%;
+      width: 50%;
+    }
+
+    @media (max-width: 768px) {
+      flex: 0 0 80%;
+      width: 80%;
+      margin: 1rem 0.5rem;
+    }
+  }
+
+  .review-card {
+    padding: 1.5rem;
+    background-color: #141414;
+    border-radius: 0.5rem 0.5rem 0 0;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: rgb(58, 58, 58) 1px solid;
+
+    @media (max-width: 768px) {
+      min-height: auto;
+      padding: 1.2rem;
+    }
+
+    .review-content {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    blockquote {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #9f9f9f;
+      margin: 0;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+      }
+    }
+
+    .quotation-mark {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
+
+    .avatar {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
+      overflow: hidden;
 
       @media (max-width: 768px) {
         width: 35px;
         height: 35px;
       }
 
-      &:hover {
-        background-color: $primary-purple;
+      .avatar-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
-  }
 
-  .review-container {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-
-    .review-wrapper {
-      display: flex;
-      width: 100%;
-    }
-
-    .review-card {
-      flex: 0 0 25%;
-      width: 25%;
-      margin: 1rem;
-      padding: 1.5rem;
-      background-color: #1f1f1f;
-      border-radius: 0.5rem;
-      max-height: 350px;
-      opacity: 1;
-
-      &.hidden {
-        opacity: 0.5;
-        visibility: visible;
-        position: relative;
-      }
-
-      @media (max-width: 1024px) {
-        flex: 0 0 40%;
-        width: 40%;
-      }
-
-      @media (max-width: 768px) {
-        flex: 0 0 80%;
-        width: 80%;
-        margin: 1rem 0.5rem;
-        max-height: none;
-        padding: 1.2rem;
-      }
-
-      blockquote {
+    .reviewer-details {
+      h4 {
         font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: 1rem;
+        font-weight: 600;
         color: #fff;
+        margin: 0 0 0.25rem 0;
 
         @media (max-width: 768px) {
           font-size: 0.9rem;
         }
       }
 
-      .reviewer {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+      p {
+        font-size: 0.875rem;
+        color: $text-gray;
+        margin: 0;
 
-        .avatar {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          overflow: hidden;
-
-          @media (max-width: 768px) {
-            width: 35px;
-            height: 35px;
-          }
-
-          .avatar-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-
-        h4 {
-          font-size: 1rem;
-          font-weight: 600;
-          color: #fff;
-
-          @media (max-width: 768px) {
-            font-size: 0.9rem;
-          }
-        }
-
-        p {
-          font-size: 0.875rem;
-          color: $text-gray;
-
-          @media (max-width: 768px) {
-            font-size: 0.8rem;
-          }
+        @media (max-width: 768px) {
+          font-size: 0.8rem;
         }
       }
     }
