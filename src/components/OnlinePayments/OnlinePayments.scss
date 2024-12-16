@@ -1,4 +1,4 @@
-$primary-purple: #7e5bef;
+$primary-purple: #b7a5f4;
 $text-gray: #b7b7b7;
 $background-dark: #0c0c0c;
 $light-lavender: #b8aed1;
@@ -88,10 +88,24 @@ $light-lavender: #b8aed1;
     .steps-container {
       display: flex;
       flex-direction: column;
+      position:relative;
       gap: 2rem;
-      border-left: 1px solid $primary-purple;
-      border-left-style: dashed;
       padding-left: 3rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -0.7px;
+        width: 2px;
+        height: 420px;
+        background: linear-gradient(to bottom, $primary-purple 50%, transparent 50%);
+        background-size: 100% 11px;
+
+        @media (max-width: 667px) {
+          height: 500px;
+        }
+      }
     }
 
     .step-item {
@@ -105,6 +119,23 @@ $light-lavender: #b8aed1;
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
+      position:relative;
+
+      &::after, &::before {
+        content: "";
+        position:absolute;
+        padding: 8px;
+        background-color: $primary-purple;
+        left: -48px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100px;
+      }
+
+      &::before {
+        background-color: rgba($primary-purple, .5);
+        padding:16px;
+      }
 
       @media (min-width: 768px) {
         font-size: 1.2rem;
